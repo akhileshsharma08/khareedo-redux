@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { add } from '../store/cartSlice'
 import data from '../data/products'
 import '../App.css'
 import { FaStar } from 'react-icons/fa'
-
+import { STATUSES } from '../store/productSclice'
+import { fetchProducts,setProducts } from '../store/productSclice'
 
 
 const Home = () => {
     const dispatch = useDispatch()
-    const [products, setProducts] = useState([])
+    // const [products, setProducts] = useState([])
 
+    const {data:products,status} = useSelector((state)=>state.product)
     useEffect(() => {
-        setProducts(data)
+        // setProducts(data)
+       dispatch(fetchProducts()) 
     },[])
 
     const Handleadd = (prod) => {
@@ -23,6 +26,9 @@ const Home = () => {
 
 
     // console.log(data, "data")
+    if(status===STATUSES.LOADING){
+        return <h2 className='text-black my-5'>LOADING ...</h2>
+    }
     return (
         <>
             <div className="container mx-auto">

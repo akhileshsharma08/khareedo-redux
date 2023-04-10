@@ -15,11 +15,11 @@ const Navbar = () => {
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
             <Link to="/" className="mr-5 hover:text-purple-600 fs-2 font-bold text-lg">Home</Link>
             <Link to="/products" className="mr-5 hover:text-purple-600 fs-2 font-bold text-lg">Products</Link>
-            <Link to="/cart" className="mr-5 hover:text-purple-600 fs-2 font-bold text-lg">Cart</Link>
+            {/* <Link to="/cart" className="mr-5 hover:text-purple-600 fs-2 font-bold text-lg">Cart</Link> */}
           </nav>
-          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded-full text-base mt-4 md:mt-0">
+          <Link to={"/cart"} className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded-full text-base mt-4 md:mt-0">
             <HiShoppingBag className='text-3xl fs-1 text-purple-600' /><span className=' bg-purple-600 text-white rounded-full px-2'>{!items?"":items.length}</span>
-          </button>
+          </Link>
         </div>
       </header>
     </>

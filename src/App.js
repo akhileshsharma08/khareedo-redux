@@ -9,6 +9,8 @@ import './App.css';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import Footer from './Components/Footer';
+import Error from './Components/Error';
+
 
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
           <Route exact path='/' element={<Home />}></Route>
           <Route exact path='/cart' element={<Cart />}></Route>
           <Route exact path='/products' element={<Products />}></Route>
-          <Route e xact path='/product/:id' element={<DetailPage />}></Route>
+          <Route exact path='/product/:id' element={<DetailPage />}></Route>
+          <Route exact path='*' element={<Error />}></Route>
         </Routes>
         <Footer/>
       </Router>

@@ -16,7 +16,7 @@ const Feature = () => {
                         </div>
                         <div class="flex-grow   mx-4">
                             <h2 class="text-gray-900 title-font font-medium">Fast Delivery </h2>
-                            <p class="text-gray-500">Lorem ipsum dolor sit amet, conse</p>
+                            {/* <p class="text-gray-500">Lorem ipsum dolor sit amet, conse</p> */}
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@ const Feature = () => {
                         </div>
                         <div class="flex-grow   mx-4">
                             <h2 class="text-gray-900 title-font font-medium">Secure Payment </h2>
-                            <p class="text-gray-500">Lorem ipsum dolor sit amet, conse</p>
+                            {/* <p class="text-gray-500">Lorem ipsum dolor sit amet, conse</p> */}
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@ const Feature = () => {
                         </div>
                         <div class="flex-grow   mx-4">
                             <h2 class="text-gray-900 title-font font-medium">Easy Refund </h2>
-                            <p class="text-gray-500">Lorem ipsum dolor sit amet, conse</p>
+                            {/* <p class="text-gray-500">Lorem ipsum dolor sit amet, conse</p> */}
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ const Feature = () => {
                         </div>
                         <div class="flex-grow   mx-4">
                             <h2 class="text-gray-900 title-font font-medium">100% Quality  </h2>
-                            <p class="text-gray-500">Lorem ipsum dolor sit amet, conse</p>
+                            {/* <p class="text-gray-500">Lorem ipsum dolor sit amet, conse</p> */}
                         </div>
                     </div>
                 </div>

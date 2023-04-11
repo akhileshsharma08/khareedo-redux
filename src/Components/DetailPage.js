@@ -3,10 +3,16 @@ import { Link, useParams } from 'react-router-dom'
 import '../App.css'
 import data from '../data/products'
 // import {FaStar} from 'react-icons/fa'
-import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
-import { fetchProducts } from '../store/productSclice'
 import { AiFillStar } from 'react-icons/ai'
+import { add } from '../store/cartSlice'
+import { useDispatch, useSelector } from 'react-redux'
+// import data from '../data/products'
+import { FaStar } from 'react-icons/fa'
+// import { STATUSES } from '../store/productSclice'
+import { fetchProducts, setProducts } from '../store/productSclice'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Triangle } from  'react-loader-spinner'
 
 const DetailPage = () => {
   const dispatch = useDispatch()
@@ -22,25 +28,16 @@ const DetailPage = () => {
     dispatch(fetchProducts())
   }, [])
 
+  const Handleadd = (item) => {
+    dispatch(add(item))
+    toast.success("Product Added to Cart !")
+}
 
 
-  console.log(myproduct, "gfg")
-  console.log(id, "lkl")
+  // console.log(myproduct, "gfg")
+  // console.log(id, "lkl")
 
-  const DetailProduct = () => {
-    return (
-      <div className="detailwrapper">
-        <div className="dtailbox">
-          {products.map((item) => {
-            return (
-              <h1>{item.productName}</h1>
-
-            )
-          })}
-        </div>
-      </div>
-    )
-  }
+const item = myproduct
 
   return (
     <>
@@ -59,9 +56,21 @@ const DetailPage = () => {
             <div className="ratingbox flex justify-start items-center">
               <h6>{myproduct.avgRating} </h6><span><AiFillStar className='text-yellow-400 text-lg ml-2' /></span>
             </div>
-            <button className='text-white text-lg bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-full my-2'>Add Item</button>
+            <button onClick={() => Handleadd(item)} className='text-white text-lg bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-full my-2'>Add Item</button>
           </div>
         </div>
+        <ToastContainer
+                      position="top-right"
+                      autoClose={5000}
+                      hideProgressBar={false}
+                      newestOnTop={false}
+                      closeOnClick
+                      rtl={false}
+                      pauseOnFocusLoss
+                      draggable
+                      pauseOnHover
+                      theme="light"
+                  />
       </div>
 
     </>

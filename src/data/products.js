@@ -167,6 +167,7 @@ const products = [
       },
     ],
     avgRating: 4.7,
+    
   },
 
   {

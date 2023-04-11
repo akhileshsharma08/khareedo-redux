@@ -8,10 +8,12 @@ import Products from './Components/Products';
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import Footer from './Components/Footer';
+
 
 function App() {
   return (
-  <div>
+  <div className='bg-gray-100'>
          <Provider store={store}>
       <Router >
         <Navbar />
@@ -21,6 +23,7 @@ function App() {
           <Route exact path='/products' element={<Products />}></Route>
           <Route e xact path='/product/:id' element={<DetailPage />}></Route>
         </Routes>
+        <Footer/>
       </Router>
     </Provider>
   </div>

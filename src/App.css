@@ -6,3 +6,13 @@
 .mycard{
   min-height: 22rem !important;
 }
+.myimgcara{
+  width: 70%;
+  height: 22rem;
+}
+
+@media only screen and (max-width: 766px){
+  .myimgcara{
+    height: 15rem;
+  }
+}

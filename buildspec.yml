@@ -20,7 +20,7 @@ phases:
       - npm run build
   post_build:
     commands:
-      - starting the deployment...
+      - echo starting the deployment...
       - pm2 serve build 80 --spa
 artifacts:
   file:

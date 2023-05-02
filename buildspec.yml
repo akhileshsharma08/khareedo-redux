@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - sudo apt update
+      - sudo apt install git
+      - sudo apt install nodejs
+      - node -v
+      - sudo apt install npm
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - npm install pm2 -g
+      - npm install serve -g
+      - npm install 
+  build:
+    commands:
+      - echo creating build of project 
+      - npm run build
+  post_build:
+    commands:
+      - starting the deployment...
+      - pm2 serve build 80 --spa
+artifacts:
+  file:
+    '**/*'

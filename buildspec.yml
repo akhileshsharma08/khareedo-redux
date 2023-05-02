@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - sudo apt update
-      - sudo apt install git
+      - sudo apt install git -y
       - sudo apt install nodejs
       - node -v
       - sudo apt install npm

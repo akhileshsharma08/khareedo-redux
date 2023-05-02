@@ -22,7 +22,6 @@ const DetailPage = () => {
 
   const { data: products, status } = useSelector((state) => state.product)
   useEffect(() => {
-    // setProducts(data)
     const mysingledata = data.filter(item => item.id === id);
     setmyproduct(mysingledata[0])
     dispatch(fetchProducts())
@@ -34,8 +33,6 @@ const DetailPage = () => {
 }
 
 
-  // console.log(myproduct, "gfg")
-  // console.log(id, "lkl")
 
 const item = myproduct
 

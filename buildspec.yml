@@ -7,7 +7,7 @@ phases:
       - sudo apt install git -y
       - sudo apt install nodejs -y
       - node -v
-      - sudo apt install npm
+      - sudo apt install npm -y
   pre_build:
     commands:
       - echo Installing source NPM dependencies...

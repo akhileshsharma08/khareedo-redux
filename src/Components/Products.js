@@ -9,7 +9,7 @@ import { STATUSES } from '../store/productSclice'
 import { fetchProducts, setProducts } from '../store/productSclice'
 import Feature from './Feature'
 // import Carausel from './Carausel'
-import { ToastContainer, toast } from 'react-toastify';
+import toast, { Toaster } from 'react-hot-toast'
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Triangle } from  'react-loader-spinner'
@@ -71,17 +71,8 @@ const Products = () => {
                           </div>
                       )
                   })}
-                  <ToastContainer
-                      position="top-right"
-                      autoClose={5000}
-                      hideProgressBar={false}
-                      newestOnTop={false}
-                      closeOnClick
-                      rtl={false}
-                      pauseOnFocusLoss
-                      draggable
-                      pauseOnHover
-                      theme="light"
+                  <Toaster
+                    
                   />
               </div>
           </div>

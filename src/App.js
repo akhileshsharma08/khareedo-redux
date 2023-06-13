@@ -10,6 +10,8 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import Footer from './Components/Footer';
 import Error from './Components/Error';
+import DummyForm from './Components/DummyForm';
+import Checkout from './Components/Checkout';
 
 
 
@@ -21,8 +23,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Home />}></Route>
+          <Route exact path='/dummy' element={<DummyForm />}></Route>
           <Route exact path='/cart' element={<Cart />}></Route>
           <Route exact path='/products' element={<Products />}></Route>
+          <Route exact path='/checkout' element={<Checkout />}></Route>
           <Route exact path='/product/:id' element={<DetailPage />}></Route>
           <Route exact path='*' element={<Error />}></Route>
         </Routes>

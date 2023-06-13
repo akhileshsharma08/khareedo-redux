@@ -21,6 +21,8 @@ const DetailPage = () => {
   const { id } = useParams()
 
   const { data: products, status } = useSelector((state) => state.product)
+  const { cartData } = useSelector((state) => state.cart);
+
   useEffect(() => {
     const mysingledata = data.filter(item => item.id === id);
     setmyproduct(mysingledata[0])
@@ -46,14 +48,19 @@ const item = myproduct
           <div className="textdetails p-5 w-3/4">
             <h1 className='text-2xl capitalize mt-4 mb-2 font-bold'>{myproduct.productName}</h1>
             <div className="category w-16">
-              <p className='bg-purple-300 text-purple-600 px-4 rounded-full py-1  font-bold capitalize'>{myproduct.category}</p>
+              <p className='bg-purple-300 text-purple-600 px-1 rounded-full py-1  font-bold capitalize'>{myproduct.category}</p>
             </div>
             <p className='my-2'>{myproduct.description}</p>
             <h1 className='text-lg font-bold'> <strike className='text-gray-600'>$ {myproduct.price +50}</strike> <span className='mx-2'>${myproduct.price}</span>  </h1>
             <div className="ratingbox flex justify-start items-center">
               <h6>{myproduct.avgRating} </h6><span><AiFillStar className='text-yellow-400 text-lg ml-2' /></span>
             </div>
+            {cartData.includes(myproduct)?
+            <button onClick={() => Handleadd(item)} className='text-white text-lg bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-full my-2'>Remove Item</button>
+            :
+
             <button onClick={() => Handleadd(item)} className='text-white text-lg bg-purple-600 hover:bg-purple-500 px-4 py-2 rounded-full my-2'>Add Item</button>
+          }
           </div>
         </div>
         <ToastContainer

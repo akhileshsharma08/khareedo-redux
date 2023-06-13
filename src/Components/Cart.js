@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from 'react-hot-toast'
 import { remove } from "../store/cartSlice";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
@@ -29,9 +29,10 @@ const Cart = () => {
     }
   };
 
-  const HandleCheckout=()=>{
-    console.log('order placed')
-    toast.success('Order Placed');
+  const HandleBuyNow=()=>{
+    console.log('buying products ')
+    // toast.success('Order Placed');
+    Navigate('/checkout')
   }
   return (
     <div>
@@ -118,7 +119,7 @@ const Cart = () => {
            {  products.reduce((acc, item) =>  acc + item.price, 0)
              
             }
-            <span> <button onClick={HandleCheckout} className="bg-purple-600 px-4 py-2 rounded mx-10 hover:bg-purple-800 text-white">Checkout</button></span>
+            <span> <button onClick={HandleBuyNow} className="bg-purple-600 px-4 py-2 rounded mx-10 hover:bg-purple-800 text-white">Buy Now</button></span>
             </h1> 
           </div>
           <h1 className="text-center bottom-5 mt-42">

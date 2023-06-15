@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import toast, { Toaster } from 'react-hot-toast'
 import { remove } from "../store/cartSlice";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
   const products = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
+  let [total, setTotal] = useState("");
+  const navigate = useNavigate()
 
   const HandleRemove = (id) => {
     dispatch(remove(id));
@@ -32,7 +34,7 @@ const Cart = () => {
   const HandleBuyNow=()=>{
     console.log('buying products ')
     // toast.success('Order Placed');
-    Navigate('/checkout')
+    navigate('/checkout') 
   }
   return (
     <div>
@@ -115,10 +117,15 @@ const Cart = () => {
           
         </div>
         <div className="total text-center border border-t-4 mt-10 py-4">
-           <h1 className="text-2xl font-bold text-gray-900 "> Total : $&nbsp;
-           {  products.reduce((acc, item) =>  acc + item.price, 0)
-             
+          <p className="invisible">
+            { total =(products.reduce((acc, item) =>  acc + item.price, 0)) 
             }
+            {localStorage.setItem("total",total)
+}
+          </p>
+           
+           <h1 className="text-2xl font-bold text-gray-900 "> Total : $&nbsp; {total}
+             
             <span> <button onClick={HandleBuyNow} className="bg-purple-600 px-4 py-2 rounded mx-10 hover:bg-purple-800 text-white">Buy Now</button></span>
             </h1> 
           </div>

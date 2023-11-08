@@ -4,7 +4,7 @@ import '../App.css'
 import data from '../data/products'
 // import {FaStar} from 'react-icons/fa'
 import { AiFillStar } from 'react-icons/ai'
-import { add } from '../store/cartSlice'
+import {  addItem } from '../store/cartSlice'
 import { useDispatch, useSelector } from 'react-redux'
 // import data from '../data/products'
 import { FaStar } from 'react-icons/fa'
@@ -30,7 +30,7 @@ const DetailPage = () => {
   }, [])
 
   const Handleadd = (item) => {
-    dispatch(add(item))
+    dispatch(addItem(item))
     toast.success("Product Added to Cart !")
 }
 

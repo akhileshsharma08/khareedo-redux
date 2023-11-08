@@ -51,7 +51,7 @@ const Checkout = () => {
       setOrderDetail(orderobj);
       localStorage.setItem("user", JSON.stringify(orderobj));
       const a = localStorage.getItem("user");
-      console.log(a, "lstrg");
+      // console.log(a, "lstrg");
     
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -95,7 +95,7 @@ const Checkout = () => {
   };
 
   useEffect(() => {
-    let mytotal = localStorage.getItem("total", JSON.stringify(total));
+    let mytotal = localStorage.getItem("cartTotal", JSON.stringify(total));
     setTotal(mytotal);
     console.log("total", total);
   });

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { add } from "../store/cartSlice";
+import { addItem, removeItem } from "../store/cartSlice";
 // import data from '../data/products'
 import "../App.css";
 import { FaStar } from "react-icons/fa";
@@ -11,7 +11,6 @@ import Feature from "./Feature";
 // import Carausel from './Carausel'
 import toast, { Toaster } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
-import { remove } from "../store/cartSlice";
 import { Triangle } from "react-loader-spinner";
 
 const Products = () => {
@@ -26,12 +25,12 @@ const Products = () => {
   }, []);
 
   const Handleadd = (prod) => {
-    dispatch(add(prod));
+    dispatch(addItem(prod));
     toast.success("Product Added to Cart !");
   };
 
   const HandleRemove = (id) => {
-    dispatch(remove(id));
+    dispatch(removeItem(id));
     alert("item removed");
   };
 

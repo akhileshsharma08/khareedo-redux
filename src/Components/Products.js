@@ -65,7 +65,7 @@ const Products = () => {
                 className="mycard bg-white shadow-lg hover:shadow-2xl p-2 m-4  "
                 key={prod.id}
               >
-                <Link to={`/product/${prod.id}`}>
+                
                   {" "}
                   <img
                     src={prod.imgUrl}
@@ -74,7 +74,7 @@ const Products = () => {
                     height={180}
                     className="overflow-hidden"
                   />
-                </Link>
+              
                 <div className="dsc my-2">
                   <h4 className="text-center">{prod.productName}</h4>
                   <h5 className="price text-center">$ {prod.price}</h5>

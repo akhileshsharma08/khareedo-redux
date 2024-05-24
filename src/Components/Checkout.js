@@ -115,7 +115,7 @@ const Checkout = () => {
               <input
                 type="text"
                 name="name"
-                className="w-full my-2 px-4 py-2 rounded"
+                className="w-full my-2 px-4 py-2 rounded border-2"
                 placeholder="Enter Name"
                 onChange={(e) => {
                   setName(e.target.value);
@@ -130,7 +130,7 @@ const Checkout = () => {
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
-                    className="w-full my-2 px-4 py-2 rounded"
+                    className="w-full my-2 px-4 py-2 rounded  border-2"
                     placeholder="Enter Email"
                   />
                 </div>
@@ -138,7 +138,7 @@ const Checkout = () => {
                   <input
                     type="phone"
                     name="phone"
-                    className="w-full my-2 px-4 py-2 rounded"
+                    className="w-full my-2 px-4 py-2 rounded border-2"
                     placeholder="Enter Phone"
                     onChange={(e) => {
                       setPhone(e.target.value);
@@ -151,7 +151,7 @@ const Checkout = () => {
                   <input
                     type="text"
                     name="pincode"
-                    className="w-full my-2 px-4 py-2 rounded"
+                    className="w-full my-2 px-4 py-2 rounded border-2"
                     placeholder="Enter Pincode"
                     onChange={(e) => {
                       setPincode(e.target.value);
@@ -162,7 +162,7 @@ const Checkout = () => {
                   <input
                     type="text"
                     name="landmark"
-                    className="w-full my-2 px-4 py-2 rounded"
+                    className="w-full my-2 px-4 py-2 rounded border-2"
                     placeholder="Enter Landmark"
                     onChange={(e) => {
                       setLandmark(e.target.value);
@@ -171,7 +171,7 @@ const Checkout = () => {
                 </div>
               </div>
               <textarea
-                className="my-2 w-full"
+                className="my-2 w-full border-2 p-2"
                 placeholder="Full Address..."
                 name="address"
                 id="address"
@@ -184,7 +184,7 @@ const Checkout = () => {
             </form>
           </div>
           <div className="md:w-3/5  w-full flex justify-center items-center ">
-            <div className="card md:w-3/5 w-full bg-white md:p-6 px-8 mx-12 text-center">
+            <div className="card md:w-3/5 w-full bg-white md:p-6 px-8 mx-4 cursor-pointer text-center">
               <div className="ordersummery mx-4">
                 <h2 className="my-2 text-2xl"> {items.length} items in your cart</h2>
                 <hr className="my-1 shadow-lg" />
@@ -195,14 +195,15 @@ const Checkout = () => {
                 <hr className="my-1" />
                 <h2 className="my-2 text-2xl">Total : ${total}</h2>
                 <hr className="my-1" />
-                <div className="btnalign mx-auto flex justify-center items-center">
-                  <button
+                <div className="btnalign mx-auto w-full flex justify-center items-center">
+                  <p
                     onClick={() => HandlePayment(total)}
-                    className="my-2 px-4 py-1 mx-1 text-white bg-purple-600 hover:bg-purple-700 rounded"
+                    className="px-2 py-1 mx-2 bg-purple-600 hover:bg-purple-700 text-white rounded"
                   >
                     Pay Now
-                  </button>
+                  </p>
                   <StripeCheckout
+                  className="text-xs"
                     token={onToken}
                     name="Khareedo.com"
                     amount={total + "00"}
